@@ -19,9 +19,8 @@ function repeater(str, options) {
   let tempStr = '';
   let tempArr = new Array((2 * (options.additionRepeatTimes || 1)  - 1 )) 
   tempArr.fill(
-    options.addition === null 
-      ? 'null' 
-      : options.addition !== undefined 
+    options.addition === null ? 'null' 
+        : options.addition !== undefined 
         ? String(options.addition) 
         : ''
   );
