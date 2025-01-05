@@ -15,24 +15,13 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getCommonCharacterCount( s1, s2 ) {
   let s1Array = s1.split('');
   let s2Array = s2.split(''); 
-  maxLengthArray = s1Array.length >= s2Array.length ? s1Array.slice(0) : s2Array.slice(0);
-  minLengthArray = s1Array.length < s2Array.length ? s1Array.slice(0) : s2Array.slice(0);
-  console.log(maxLengthArray)
-  console.log(minLengthArray)
+
   let sum = 0;
-  for (let i = 0; i < maxLengthArray.length; i++ ) {
-    for (let j = 0; j < minLengthArray.length; j++ ) {
-      if (maxLengthArray[i] === minLengthArray[j]) {
-        console.log(`'i index: ${i}; max[i]: ${maxLengthArray[i]}`);
-        console.log(`'j index: ${j}; min[j]]: ${minLengthArray[j]}`);
-        
+  for (let i = 0; i < s1Array.length; i++ ) {
+    for (let j = 0; j < s2Array.length; j++ ) {
+      if (s1Array[i] === s2Array[j]) {  
         sum += 1;
-        console.log(sum)
-        // maxLengthArray.splice(i, 1)
-        minLengthArray.splice(j, 1)
-        console.log(maxLengthArray)
-        console.log(minLengthArray)
-        console.log('---')
+        s2Array.splice(j, 1)
         break;
       }
     }
