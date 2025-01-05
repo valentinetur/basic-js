@@ -19,22 +19,20 @@ function encodeLine(str) {
   let tempSum = 1;
   for (let i = 1; i <= tempArr.length; i++) {
    if (tempArr[i] === tempArr[i - 1]) {
-     tempSum += 1;
-     console.log(`reslt in if ${result}`)
-     console.log(`tempSum in if ${tempSum}`)
+      tempSum += 1;
+      console.log(`reslt in if ${result}`)
+      console.log(`tempSum in if ${tempSum}`)
       console.log('------')
    } else {
-     result += `${tempSum}${tempArr[i - 1]}`
-     tempSum = 1;
-     console.log(`reslt in else ${result}`)
-     console.log(`tempSum in else ${tempSum}`)
-     console.log('------')
+    result += tempSum > 1 ? `${tempSum}${tempArr[i - 1]}` : tempArr[i - 1];
+      tempSum = 1;
+      console.log(`reslt in else ${result}`)
+      console.log(`tempSum in else ${tempSum}`)
+      console.log('------')
    }
   }
-  
-  const answ = result.replaceAll('1', '');
-  
-  return answ
+
+  return result;
  }
 
 module.exports = {
